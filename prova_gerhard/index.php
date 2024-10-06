@@ -12,13 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'usuario2' => 'senha2'
     ];
 
-    $nome_usuario = $_POST['username'];
-    $senha = $_POST['password'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
     // Verifica se o usuário e senha estão corretos
-    if (isset($usuarios[$nome_usuario]) && $usuarios[$nome_usuario] == $senha) {
-        // Armazena o nome do usuário na sessão
-        $_SESSION['username'] = $nome_usuario;
+    if (isset($usuarios[$email]) && $usuarios[$email] == $senha) {
+        // Armazena o os valores de 
+        $_SESSION['email'] = $email;
+        $_SESSION['nome'] = $nome;
         // Redireciona para a página de escolha
         header('Location: escolha.php');
         exit();
@@ -37,26 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    
-    <!-- Formulário de login -->
-    <form action="index.php" method="POST">
-        <input type="text" name="nomecompleto" id="nome" placeholder="NOME" required><br><br>
-        <input type="email" name="username" id="email" placeholder="EMAIL" required><br><br>
-        <input type="password" name="password" id="senha" placeholder="SENHA" required><br><br>
-        <input type="submit" value="Logar">
-    </form>
 
+    <!-- Formulário de login -->
     <h1>LOGIN</h1>
-    
-    <!-- <form action="index.php" method="POST">
-        
+    <form action="index.php" method="POST">
         <input type="text" name="nome" id="nome" placeholder="NOME" required><br><br>
         <input type="email" name="email" id="email" placeholder="EMAIL" required><br><br>
         <input type="password" name="senha" id="senha" placeholder="SENHA" required><br><br>
-        
-        <input type="submit" value="Logar"> 
-        
-    </form> -->
+        <input type="submit" value="LOGAR">
+    </form>
 
     <!-- Exibe mensagem de erro se houver -->
     <?php if (isset($erro)): ?>
@@ -66,10 +57,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 
 </html>
-
-<!-- BARRA DE COMENTÁRIOS -->
- <!-- 
-tô caçando os nomes das variáveis pra não ficar na cara que a gente tava usando o gpt
-mudando pra o que realmente elas significam, tipo email, nome completo e tal
-fazer um commit aqui né pai, pra evitar merdas
- -->

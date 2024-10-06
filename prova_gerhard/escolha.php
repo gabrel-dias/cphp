@@ -3,14 +3,14 @@
 session_start();
 
 // Verifica se o usuário está logado
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['nome'])) {
     // Redireciona de volta ao login se não estiver logado
     header('Location: index.php');
     exit();
 }
 
 // Pega o nome do usuário da sessão
-$nome = htmlspecialchars($_SESSION['username']);
+$nome = htmlspecialchars($_SESSION['nome']);
 ?>
 
 <!DOCTYPE html>
