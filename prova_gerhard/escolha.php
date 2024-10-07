@@ -1,6 +1,6 @@
 <!-- escolha.php -->
 <?php
-// Inicia recuperando os dados da sessão
+// Verifica se há uma sessão ativa e recupera todos os dados que foram armazenados na página anterior, por exemplo
 session_start();
 
 // Verifica se o usuário está logado
@@ -11,7 +11,7 @@ if (!isset($_SESSION['nome'])) {
 }
 
 // Pega o nome do usuário da sessão
-// Converte caracteres especiais em entidades de HTML
+// Converte caracteres especiais em entidades de HTML e recupera o valor de nome do usuário que foi coletado na página anterior
 $nome = htmlspecialchars($_SESSION['nome']); // método inútil aparentemente
 ?>
 
