@@ -10,7 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'gabriel@dias' => '123',
         'enzzo@dias' => '123'
     ];
-
+    
+    // Os dados que foram enviados do formulário para o servidor
+    // usando o método POST são acessados e armazenados nas variáveis
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -55,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="submit" value="LOGAR">
         </form>
     </div>
-
 
 </body>
 
