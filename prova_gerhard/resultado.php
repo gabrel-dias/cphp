@@ -22,24 +22,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nome'], $_POST['equipa
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Resultado Final</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h2>Especificações da Máquina de <?php echo $nome; ?></h2>
-    <ul>
-        <li><strong>Equipamento:</strong> <?php echo ucfirst($equipamento); ?></li>
-        <li><strong>CPU:</strong> <?php echo $cpu[0]; ?></li>
-        <li><strong>Memória:</strong> <?php echo $memoria[0]; ?></li>
-        <li><strong>Armazenamento:</strong> <?php echo $armazenamento[0]; ?></li>
-        <li><strong>Sistema Operacional:</strong> <?php echo $so[0]; ?></li>
 
-        <?php if ($equipamento == 'desktop' && isset($monitor)): ?>
-            <li><strong>Monitor:</strong> <?php echo $monitor[0]; ?></li>
-        <?php endif; ?>
-    </ul>
+<body id="login">
 
-    <h3>Valor Total: R$ <?php echo number_format($total, 2, ',', '.'); ?></h3>
+    <div id="preco_resultado">
+
+        <h2>Especificações da Máquina de <label for="nome_cliente"><?php echo $nome; ?></label></h2>
+
+        <ul>
+
+            <li><strong>Equipamento:</strong> <?php echo ucfirst($equipamento); ?></li>
+            <li><strong>CPU:</strong> <?php echo $cpu[0]; ?></li>
+            <li><strong>Memória:</strong> <?php echo $memoria[0]; ?></li>
+            <li><strong>Armazenamento:</strong> <?php echo $armazenamento[0]; ?></li>
+            <li><strong>Sistema Operacional:</strong> <?php echo $so[0]; ?></li>
+
+            <?php if ($equipamento == 'desktop' && isset($monitor)): ?>
+
+                <li><strong>Monitor:</strong> <?php echo $monitor[0]; ?></li>
+
+            <?php endif; ?>
+
+        </ul>
+
+        <h3>Valor Total: R$ <label for="nome_cliente"><?php echo number_format($total, 2, ',', '.'); ?></label></h3>
+
+    </div>
+
 </body>
+
 </html>

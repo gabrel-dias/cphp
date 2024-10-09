@@ -1,8 +1,12 @@
+/* --------------------- GERAL --------------------- */
+body {
+    background-color: #001427;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 /* --------------------- INDEX.PHP --------------------- */
 
 #login {
-    background-color: #001427;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -56,7 +60,7 @@
 
 #geral {
     width: 700px;
-    height: 900px;
+    height: 400px;
     background-color: #0B6E4F;
     padding: 40px;
     margin: 50px;
@@ -70,8 +74,8 @@
 
 #escolha_php input[type="submit"] {
     border-radius: 10px;
-    width: 200px;
-    height: 35px;
+    width: 100px;
+    height: 50px;
     background-color: #F7B801;
     cursor: pointer;     
 }
@@ -84,4 +88,82 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+#geral label[for="nome_cliente"] {
+    color: #F7B801;
+}
+
+
+/* --------------------- MONTAGEM.PHP --------------------- */
+
+#montagem_geral {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cartao_montagem {
+    background-color: #0B6E4F;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+#cartao_montagem h2 {
+    color: #F7B801;
+    text-align: center;
+}
+
+#cartao_montagem input[type='submit'] {
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+    background-color: #F7B801;
+    cursor: pointer;    
+}
+
+#cartao_montagem input[type='submit']:hover {
+    background-color: #F4A001;
+}
+
+#cartao_montagem h3 {
+    color: white;
+}
+
+.opc {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 4px;
+    width: 250px;
+    position: relative;
+}
+
+.opc:hover {
+    background-color: #e0e0e0;
+}
+
+
+.opc option {
+    background-color: #fff;
+}
+
+/* --------------------- RESULTADO.PHP --------------------- */
+
+#preco_resultado {
+    background-color: #0B6E4F;
+    color: white;
+    width: 400px;
+    height: 400px;
+    padding: 40px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+#preco_resultado label[for="nome_cliente"] {
+    color: #F7B801;   
 }

@@ -12,7 +12,7 @@ if (!isset($_SESSION['nome'])) {
 
 // Pega o nome do usuário da sessão
 // Converte caracteres especiais em entidades de HTML e recupera o valor de nome do usuário que foi coletado na página anterior
-$nome = htmlspecialchars($_SESSION['nome']); // método inútil aparentemente
+$nome = htmlspecialchars($_SESSION['nome']);
 ?>
 
 <!DOCTYPE html>
@@ -26,28 +26,25 @@ $nome = htmlspecialchars($_SESSION['nome']); // método inútil aparentemente
 
 <body id="escolha_php">
 
-    <form action="montagem.php" method="POST">
+    <div id="geral">
+<!-- Recupera o valor do campo de nome para mensagem de boas vindas -->
+        <h2>Bem-vindo, <label for="nome_cliente"><?php echo $nome; ?>!</label></h2>
 
-        <div id="geral">
+        <h3>Você deseja comprar um:</h3>
 
-            <h2>Bem-vindo, <?php echo $nome; ?>!</h2>
+        <form action="montagem.php" method="POST">
+            <input type="hidden" name="nome" value="<?php echo $nome; ?>">
 
-            <h3>Você deseja comprar um:</h3>
+            <div id="opcoes">
+                <input type="radio" id="notebook" name="equipamento" value="notebook" required>
+                <label for="notebook"><img src="../imgs/laptop.png" alt="Notebook"><br><b>Notebook</b></label><br>
+                <input type="radio" id="desktop" name="equipamento" value="desktop" required>
+                <label for="desktop"><img src="../imgs/computer.png" alt="Desktop"><br><b>Desktop</b></label><br><br>
+                <input type="submit" value="Escolher">
+            </div>
+        </form>
+    </div>
 
-            <form action="montagem.php" method="POST">
-                <input type="hidden" name="nome" value="<?php echo $nome; ?>">
-
-                <div id="opcoes">
-                    <input type="radio" id="notebook" name="equipamento" value="notebook" required>
-                    <label for="notebook"><img src="../imgs/laptop.png" alt="Notebook"></label><br>
-                    <input type="radio" id="desktop" name="equipamento" value="desktop" required>
-                    <label for="desktop"><img src="../imgs/computer.png" alt="Desktop"></label><br><br>
-                    <input type="submit" value="Escolher">
-                </div>
-            </form>
-        </div>
-
-    </form>
 </body>
 
 </html>
