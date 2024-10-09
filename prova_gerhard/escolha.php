@@ -34,14 +34,17 @@ $nome = htmlspecialchars($_SESSION['nome']); // método inútil aparentemente
 
             <h3>Você deseja comprar um:</h3>
 
-            <div id="opcoes">
-                <input type="radio" id="notebook" name="equipamento" value="notebook" required>
-                <label for="notebook"><img src="../imgs/laptop.png" alt="Notebook"></label><br>
-                <input type="radio" id="desktop" name="equipamento" value="desktop" required>
-                <label for="desktop"><img src="../imgs/computer.png" alt="Desktop"></label><br><br>
-                <input type="submit" value="Escolher">
-            </div>
+            <form action="montagem.php" method="POST">
+                <input type="hidden" name="nome" value="<?php echo $nome; ?>">
 
+                <div id="opcoes">
+                    <input type="radio" id="notebook" name="equipamento" value="notebook" required>
+                    <label for="notebook"><img src="../imgs/laptop.png" alt="Notebook"></label><br>
+                    <input type="radio" id="desktop" name="equipamento" value="desktop" required>
+                    <label for="desktop"><img src="../imgs/computer.png" alt="Desktop"></label><br><br>
+                    <input type="submit" value="Escolher">
+                </div>
+            </form>
         </div>
 
     </form>
