@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuarios = [
         'admin' => 'admin',
         'gabriel@dias' => '123',
-        'enzzo@dias' => '123'
+        'enzzo@dias' => '123',
+        'gerhard@saboia' => '123'
     ];
     
     // Os dados que foram enviados do formulário para o servidor

@@ -21,20 +21,29 @@ $nome = htmlspecialchars($_SESSION['nome']); // método inútil aparentemente
 <head>
     <meta charset="UTF-8">
     <title>Escolha o Equipamento</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <h2>Bem-vindo, <?php echo $nome; ?>!</h2>
+<body id="escolha_php">
+
     <form action="montagem.php" method="POST">
-        <input type="hidden" name="nome" value="<?php echo $nome; ?>">
-        <div>
+
+        <div id="geral">
+
+            <h2>Bem-vindo, <?php echo $nome; ?>!</h2>
+
             <h3>Você deseja comprar um:</h3>
-            <input type="radio" id="notebook" name="equipamento" value="notebook" required>
-            <label for="notebook">Notebook</label><br>
-            <input type="radio" id="desktop" name="equipamento" value="desktop" required>
-            <label for="desktop">Desktop</label><br><br>
-            <input type="submit" value="Escolher">
+
+            <div id="opcoes">
+                <input type="radio" id="notebook" name="equipamento" value="notebook" required>
+                <label for="notebook"><img src="../imgs/laptop.png" alt="Notebook"></label><br>
+                <input type="radio" id="desktop" name="equipamento" value="desktop" required>
+                <label for="desktop"><img src="../imgs/computer.png" alt="Desktop"></label><br><br>
+                <input type="submit" value="Escolher">
+            </div>
+
         </div>
+
     </form>
 </body>
 
